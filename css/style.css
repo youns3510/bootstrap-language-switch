@@ -39,6 +39,7 @@ main .links {
 }
 .links .lang{
  cursor: pointer;
+
 }
 .links .lang:first-of-type{
  border-bottom:1px solid lightgray ;
@@ -49,9 +50,7 @@ main .links {
 .links .lang:nth-child(2):hover{ 
  background-color: #00b6f2;
 }
-.links div {
- vertical-align: middle;
-}
+
 
 .switch {
  position: relative;
