@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Website name</title>
+ <link rel="stylesheet" href="/css/bootstrap.min.css">
+ <link rel="stylesheet" href="/css/style.css">
+
+ <script>
+  function translate(lang) {
+   // console.log('settiem')
+   if (lang == 'en') {
+    console.log('english')
+    document.getElementById('china').setAttribute('checked', false)
+    document.getElementById('english').setAttribute('checked', true)
+   } else {
+    console.log('china')
+    document.getElementById('english').setAttribute('checked', false)
+    document.getElementById('china').setAttribute('checked', true)
+   }
+
+   setTimeout(function () {
+    window.location.href = "/" + lang + "/";
+   }, 3000);
+
+  }
+ </script>
+</head>
+
+<body>
+ <main>
+
+  <div class="links">
+   <div class="container col-md-4 shadow-lg bg-white rounded">
+    <div class="row p-3 lang" onclick="translate('en')">
+     <div class="col-sm-6 text-left">English</div>
+     <div class="col-sm-6">
+      <img src="/img/united-kingdom.png" alt="united kingdom" class="mr-3 flags">
+      <label class="switch text-right">
+       <input type="radio" name="lang" checked id="english">
+       <span class="slider round english"></span>
+      </label>
+
+
+     </div>
+    </div>
+
+
+    <div class="row p-3 lang" onclick="translate('ch')">
+     <div class="col-sm-6 text-left">Chines</div>
+     <div class="col-sm-6">
+      <img src="/img/china.png" alt="china" class="mr-3 flags">
+      <label class="switch text-right">
+       <input type="radio" name="lang" id="china">
+       <span class="slider round china"></span>
+      </label>
+     </div>
+    </div>
+   </div>
+
+
+  </div>
+ </main>
+ <script src="/js/jquery-3.4.1.min.js"></script>
+ <script src="/js/bootstrap.min.js"></script>
+</body>
+
+</html>
