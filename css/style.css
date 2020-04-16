@@ -39,7 +39,6 @@ main .links {
 }
 .links .lang{
  cursor: pointer;
-
 }
 .links .lang:first-of-type{
  border-bottom:1px solid lightgray ;

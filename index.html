@@ -10,26 +10,10 @@ https://github.com/youns3510/
  <link rel="shortcut icon" type="image/x-icon" href="/en/png/favicon.png">
  <link rel="stylesheet" href="/css/bootstrap.min.css">
  <link rel="stylesheet" href="/css/style.css">
+ <script src="/js/jquery-3.4.1.min.js"></script>
+ <script src="/js/bootstrap.min.js"></script>
 
- <script>
-  function translate(lang) {
-   // console.log('settiem')
-   if (lang == 'en') {
-    console.log('english')
-    document.getElementById('china').setAttribute('checked', false)
-    document.getElementById('english').setAttribute('checked', true)
-   } else {
-    console.log('china')
-    document.getElementById('english').setAttribute('checked', false)
-    document.getElementById('china').setAttribute('checked', true)
-   }
 
-   setTimeout(function () {
-    window.location.href = "/" + lang + "/";
-   }, 1000);
-
-  }
- </script>
 </head>
 
 <body>
@@ -37,7 +21,7 @@ https://github.com/youns3510/
 
   <div class="links">
    <div class="container col-md-5 shadow-lg bg-white rounded">
-    <div class="row p-3 lang" onclick="translate('en')">
+    <div class="row p-3 lang" id="en" >
      <div class="col-sm-4 text-left">English</div>
      <!-- <div class="clear-fix"></div> -->
      <div class="col-sm-8 text-right">
@@ -52,7 +36,7 @@ https://github.com/youns3510/
     </div>
 
 
-    <div class="row p-3 lang" onclick="translate('cn')">
+    <div class="row p-3 lang" id="cn">
      <div class="col-sm-4 text-left">Chinese</div>
      <!-- <div class="clear-fix"></div> -->
      <div class="col-sm-8 text-right">
@@ -68,8 +52,33 @@ https://github.com/youns3510/
 
   </div>
  </main>
- <script src="/js/jquery-3.4.1.min.js"></script>
- <script src="/js/bootstrap.min.js"></script>
+ <script type="text/Javascript">
+ $(document).ready(function(){
+  $('#cn').on('click touchend', function () {
+   translate('cn')
+  });
+  $('#en').on('click touchend', function () {
+   translate('en')
+  });
+  function translate(lang) {
+   // console.log('settiem')
+   if (lang == 'en') {
+    // console.log('english')
+    $('#china').attr('checked', false)
+    $('#english').attr('checked', true)
+   } else {
+    // console.log('china')
+    $('#english').attr('checked', false)
+    $('#china').attr('checked', true)
+   }
+
+   setTimeout(function () {
+    window.location.href = "/" + lang + "/";
+   }, 1000);
+
+  }
+ })
+ </script>
 </body>
 
 </html>
