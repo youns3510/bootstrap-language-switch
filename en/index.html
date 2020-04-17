@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>English</title>
+ <link rel="stylesheet" href="/css/bootstrap.min.css">
+ <link rel="stylesheet" href="/css/style.css">
+ <script src="/js/jquery-3.4.1.min.js"></script>
+ <script src="/js/bootstrap.min.js"></script>
+ <script src="/js/custom.js"></script>
+
+</head>
+<body>
+<p> Lorem, ipsum dolor sit amet consectetur adipisicing elit. Assumenda officia unde natus. Obcaecati, quod debitis praesentium consectetur modi recusandae atque. Sed eveniet facere fugit optio ex consectetur neque illo porro!
+ Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe ex, earum, modi inventore ea illum perferendis sed, magnam minima odit quibusdam est distinctio maiores veritatis officiis itaque eos quidem beatae.
+</p>
+ <br>
+ <br>
+ <a href="/&#googtrans/en/en">Go Back</a>
+ <button type="button" id="tolang-en">English</button>
+ <button type="button" id="tolang-cn">Chinese</button>
+
+<div id="google_translate_element" style="display: none !important;"></div>
+
+<script type="text/javascript">
+ function googleTranslateElementInit() {
+  new google.translate.TranslateElement({ pageLanguage: 'en' }, 'google_translate_element');
+ }
+</script>
+
+<script type="text/javascript"
+ src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+<script>
+//  $(document).ready(function () {
+//   var url = window.location.href
+//   if (url.search("/cn/") !== -1) {
+//    // console.log("chinese")
+//    window.location.href = url+"&#googtrans/en/zh-CN" ;
+//    // $('#google_translate_element .goog-te-combo').find('option[value="zh-CN"]').attr("selected", 'selected');  
+//   } else {
+//    window.location.href = url+"&#googtrans/en/en" ;
+//    // $('#google_translate_element .goog-te-combo').find('option[value=""]').attr("selected", 'selected');
+//   }
+  
+
+
+  // $('#google_translate_element').css('display','none');
+
+//  })
+</script>
+</body>
+</html>

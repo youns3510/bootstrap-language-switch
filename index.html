@@ -3,82 +3,113 @@
 <!--Younes Mahamoud
 https://github.com/youns3510/
 -->
+
 <head>
- <meta charset="UTF-8">
- <meta name="viewport" content="width=device-width, initial-scale=1.0">
- <title> C.G.B UK Courier Company</title>
- <link rel="shortcut icon" type="image/x-icon" href="/en/png/favicon.png">
- <link rel="stylesheet" href="/css/bootstrap.min.css">
- <link rel="stylesheet" href="/css/style.css">
- <script src="/js/jquery-3.4.1.min.js"></script>
- <script src="/js/bootstrap.min.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> Company</title>
+  <link rel="shortcut icon" type="image/x-icon" href="/en/png/favicon.png">
+  <link rel="stylesheet" href="/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/css/style.css">
+  <script src="/js/jquery-3.4.1.min.js"></script>
+  <script src="/js/bootstrap.min.js"></script>
 
+  <script src="/js/custom.js"></script>
+  <script>
+    // $(document).ready(function () {
+    //   $('#translate').load('/translate.html');
+    // });
 
+  </script>
 </head>
 
 <body>
- <main>
+  <div id="translate"></div>
 
-  <div class="links">
-   <div class="container col-md-5 shadow-lg bg-white rounded">
-    <div class="row p-3 lang" id="en" >
-     <div class="col-sm-4 text-left">English</div>
-     <!-- <div class="clear-fix"></div> -->
-     <div class="col-sm-8 text-right">
-      <img src="/img/united-kingdom.png" alt="united kingdom" class="mr-3 flags">
-      <label class="switch">
-       <input type="radio" name="lang"  id="english">
-       <span class="slider round english"></span>
-      </label>
+  <main>
+
+    <div class="links">
+      <div class="container col-md-5 shadow-lg bg-white rounded">
+        <div class="row p-3 lang" id="en">
+          <div class="col-sm-4 text-left">English</div>
+          <!-- <div class="clear-fix"></div> -->
+          <div class="col-sm-8 text-right">
+            <img src="/img/united-kingdom.png" alt="united kingdom" class="mr-3 flags">
+            <label class="switch">
+              <input type="radio" name="lang" id="english">
+              <span class="slider round english"></span>
+            </label>
 
 
-     </div>
+          </div>
+        </div>
+
+
+        <div class="row p-3 lang" id="cn">
+          <div class="col-sm-4 text-left">Chinese</div>
+          <!-- <div class="clear-fix"></div> -->
+          <div class="col-sm-8 text-right">
+            <img src="/img/china.png" alt="china" class="mr-3 flags">
+            <label class="switch">
+              <input type="radio" name="lang" id="china">
+              <span class="slider round china"></span>
+            </label>
+          </div>
+        </div>
+      </div>
+
+
     </div>
+  </main>
 
 
-    <div class="row p-3 lang" id="cn">
-     <div class="col-sm-4 text-left">Chinese</div>
-     <!-- <div class="clear-fix"></div> -->
-     <div class="col-sm-8 text-right">
-      <img src="/img/china.png" alt="china" class="mr-3 flags">
-      <label class="switch">
-       <input type="radio" name="lang" id="china">
-       <span class="slider round china"></span>
-      </label>
-     </div>
-    </div>
-   </div>
+  <script type="text/Javascript">
 
+    $(document).ready(function(){
+     var url = window.location.href //document.referrer; 
+     console.log(url);
+     if (url.search("googtrans\/en\/zh-CN") != -1) {
+       $('#english').attr('checked', false)
+       $('#china').attr('checked', true)
+      
+     }
 
-  </div>
- </main>
- <script type="text/Javascript">
- $(document).ready(function(){
-  $('#cn').on('click touchend', function () {
-   translate('cn')
-  });
-  $('#en').on('click touchend', function () {
-   translate('en')
-  });
-  function translate(lang) {
-   // console.log('settiem')
-   if (lang == 'en') {
-    // console.log('english')
-    $('#china').attr('checked', false)
-    $('#english').attr('checked', true)
-   } else {
-    // console.log('china')
-    $('#english').attr('checked', false)
-    $('#china').attr('checked', true)
-   }
+     if(url.search("googtrans\/en\/en") != -1){
+       console.log('english')
+      //  window.location.href = url+"&#googtrans/en/en" ;
+       $('#china').attr('checked', false)
+       $('#english').attr('checked', true)
+     }
+   
+   
+     $('#cn').on('click touchend', function () {
+      translate('cn')
+     });
+     $('#en').on('click touchend', function () {
+      translate('en')
+     });
 
-   setTimeout(function () {
-    window.location.href = "/" + lang + "/";
-   }, 1000);
-
-  }
- })
- </script>
+     function translate(lang) {
+      // console.log('settiem')
+      if (lang == 'en') {
+       // console.log('english')
+       $('#china').attr('checked', false)
+       $('#english').attr('checked', true)
+       url = "/en/&#googtrans/en/en";
+      } else {
+       // console.log('china')
+       $('#english').attr('checked', false)
+       $('#china').attr('checked', true)
+       url = "/cn/&#googtrans/en/zh-CN";
+      }
+   
+      setTimeout(function () {   
+       window.location.href = url;
+      }, 1000);
+   
+     }
+    })
+    </script>
 </body>
 
 </html>

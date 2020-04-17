@@ -113,3 +113,12 @@ input:checked+.slider:before {
 .slider.round:before {
  border-radius: 50%;
 }
+
+
+.goog-te-banner-frame.skiptranslate {
+  display: none !important;
+}
+
+body {
+  top: 0px !important;
+}
