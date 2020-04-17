@@ -24,9 +24,7 @@ https://github.com/youns3510/
 </head>
 
 <body>
-  <div id="translate"></div>
-
-  <main>
+   <main>
 
     <div class="links">
       <div class="container col-md-5 shadow-lg bg-white rounded">
@@ -76,7 +74,7 @@ https://github.com/youns3510/
 
      if(url.search("googtrans\/en\/en") != -1){
        console.log('english')
-      //  window.location.href = url+"&#googtrans/en/en" ;
+      //  window.location.href = url+"#googtrans/en/en" ;
        $('#china').attr('checked', false)
        $('#english').attr('checked', true)
      }
@@ -95,12 +93,12 @@ https://github.com/youns3510/
        // console.log('english')
        $('#china').attr('checked', false)
        $('#english').attr('checked', true)
-       url = "/en/&#googtrans/en/en";
+       url = "/en/#googtrans/en/en";
       } else {
        // console.log('china')
        $('#english').attr('checked', false)
        $('#china').attr('checked', true)
-       url = "/cn/&#googtrans/en/zh-CN";
+       url = "/cn/#googtrans/en/zh-CN";
       }
    
       setTimeout(function () {   
